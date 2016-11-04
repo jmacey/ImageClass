@@ -10,7 +10,7 @@ int main()
   std::cout<<"testing image\n";
   Image test(width,height);
 
-  for(int frame=0; frame<width; ++frame )
+  for(size_t frame=0; frame<width; ++frame )
   {
     test.clearScreen(255,255,255);
     for(size_t x=0; x<frame; ++x)
@@ -20,7 +20,7 @@ int main()
     }
 
     char name[50];
-    sprintf(name,"frame.%04d.png",frame);
+    sprintf(name,"frame.%04d.png",static_cast<int>(frame));
     test.save(name);
   }
 
